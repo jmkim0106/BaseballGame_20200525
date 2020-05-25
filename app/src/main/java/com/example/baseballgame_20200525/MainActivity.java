@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.baseballgame_20200525.adapters.MessageAdapter;
 import com.example.baseballgame_20200525.databinding.ActivityMainBinding;
@@ -45,6 +46,12 @@ public class MainActivity extends BaseActivity {
 //                전송버튼 누르면 => 타이핑 된 값을 받아오기
                 String inputValue = binding.numEdt.getText().toString();
 
+//                3자리가 아니면 등록 거부
+                if (inputValue.length() != 3) {
+                    Toast.makeText(mContext, "3자리 숫자로 입력해주세요", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
 //                새로운 메세지로 등록
                 messages.add(new Message(inputValue, "Me"));
 
@@ -53,6 +60,9 @@ public class MainActivity extends BaseActivity {
 
 //                리스트뷰를 맨 밑으로 끌어내려주자.
                 binding.messageListview.smoothScrollToPosition(messages.size()-1);
+
+//                ?S ?B인지 계산하고 답장하자.
+                checkStrikeAndBalls(inputValue);
             }
         });
 
@@ -110,4 +120,15 @@ public class MainActivity extends BaseActivity {
         messageAdapter.notifyDataSetChanged();
 
     }
+
+    void checkStrikeAndBalls(String inputVal) {
+
+//        String => int로 변경 => int[] 3자리로 변경.
+
+        int inputNum = Integer.parseInt(inputVal);
+
+
+
+    }
+
 }
