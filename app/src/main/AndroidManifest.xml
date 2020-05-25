@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_baseball_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".datas.SplashActivity">
+        <activity android:name=".datas.SplashActivity"
+            android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
