@@ -1,8 +1,8 @@
 package com.example.baseballgame_20200525.datas;
 
 public class Message {
-    private String content;
-    private String who;
+    private String content; // 메세지의 내용
+    private String who; //
 
     public Message(String content, String who) {
         this.content = content;
